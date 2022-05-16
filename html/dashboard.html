@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Host-it</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Your all in one gaming platform. Engage in tournaments and conquer">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body class="custom">
+    <!-- <div id="overlay">
+        <div class="spinner"></div>
+        <br />
+        Loading...
+    </div> -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-0 static-top">
+        <div class="container-fluid iii">
+            <a class="navbar-brand" href="/dashboard">
+<!--                <img src="http://placehold.it/150x50?text=Logo" alt="">-->
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link middle" href="/dashboard">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link middle" href="/videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link middle" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link middle" href="#footer">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link middle" onclick="logout()">logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+<!--    <div class="">-->
+
+<!--        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">-->
+
+<!--            &lt;!&ndash; Wrapper for carousel items &ndash;&gt;-->
+<!--            <div class="carousel-inner" id="bannerList">-->
+
+<!--            </div>-->
+<!--            &lt;!&ndash; Carousel controls &ndash;&gt;-->
+<!--            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">-->
+<!--                <span class="carousel-control-prev-icon"></span>-->
+<!--            </a>-->
+<!--            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">-->
+<!--                <span class="carousel-control-next-icon"></span>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="container my-1 ">
+        <!-- tournaments section  -->
+
+        <div class="row mt-5 px-0">
+            <div class="col-md-3 pr-md-3 px-0 filter-pc">
+                <div class="filter rounded-lg" id="filter">
+                    <h4 class="font-weight-bold w-100 border-bottom px-2 py-1">FILTER</h4>
+
+                    <div class="row p-2 w-100">
+
+                        <section class="mb-3 pl-3 col-6 col-md-12">
+                            <p>Price</p>
+                            <div class="custom-control custom-checkbox ml-2 pb-2">
+                               From <input type="text"  id="fromPrice" style="width: 100px;">
+                            </div>
+                            <div class="custom-control custom-checkbox ml-2 pb-2">
+                                To  <input type="text"  id="toPrice" style="width: 100px;">
+                            </div>
+                        </section>
+
+                        <section class="mb-3 pl-3 col-6 col-md-12" id="brandList">
+                            <p>Brand</p>
+                            <div class="custom-control custom-checkbox ml-2 pb-2">
+                                <input type="checkbox" class="custom-control-input filled-in" id="today">
+                                <label class="custom-control-label small w-100 card-link-secondary px-2 py-1"
+                                       for="today">sample brand</label>
+                            </div>
+                        </section>
+
+                        <button type="button" class="btn btn-outline-info waves-effect btn-sm w-100 ml-4"
+                            onclick="gatherFilterElements()">apply</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tournamentSection col-md-9 px-0">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tournament-tab" data-toggle="tab" href="#tournament" role="tab"
+                            aria-controls="home" aria-selected="true">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">My Cart</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tournament" role="tabpanel"
+                        aria-labelledby="tournament-tab">
+                        <div class="py-4" id="tournamentBody">
+
+                            <div class="col-md-3 pr-md-3 px-0 d-md-none">
+                                <div class="filter rounded-lg" id="filter">
+                                    <h5 class="font-weight-bold w-100 d-flex justify-content-end pr-2 py-1" data-toggle="collapse"
+                                        data-target="#collapseExample" aria-expanded="false"
+                                        aria-controls="collapseExample">FILTER</h5>
+                                    <div class="collapse" id="collapseExample">
+
+                                        <div class="row p-2 w-100">
+
+                                            <section class="mb-3 pl-3 col-6 col-md-12">
+                                                <p>Price</p>
+                                            </section>
+
+                                            <section class="mb-3 pl-3 col-6 col-md-12">
+                                                <p>Brand</p>
+                                                <div class="custom-control custom-checkbox ml-2 pb-2">
+                                                    <input type="checkbox" class="custom-control-input filled-in"
+                                                        id="open">
+                                                    <label
+                                                        class="custom-control-label small w-100 card-link-secondary px-2 py-1"
+                                                        for="open">Open</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox ml-2 pb-2">
+                                                    <input type="checkbox" class="custom-control-input filled-in"
+                                                        id="full">
+                                                    <label
+                                                        class="custom-control-label small w-100 card-link-secondary px-2 py-1"
+                                                        for="full">Full</label>
+                                                </div>
+                                            </section>
+
+                                            <section class="mb-3 pl-3 col-md-12" id="gameFilter">
+                                                <p>Games</p>
+                                                <div class="custom-control custom-checkbox ml-2 pb-2">
+                                                    <input type="checkbox" class="custom-control-input filled-in"
+                                                        id="pubg">
+                                                    <label
+                                                        class="custom-control-label small w-100 text-uppercase card-link-secondary px-2 py-1"
+                                                        for="pubg">pubg</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox ml-2 pb-2">
+                                                    <input type="checkbox" class="custom-control-input filled-in"
+                                                        id="cod">
+                                                    <label
+                                                        class="custom-control-label small w-100 text-uppercase card-link-secondary px-2 py-1"
+                                                        for="cod">cod</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox ml-2 pb-2">
+                                                    <input type="checkbox" class="custom-control-input filled-in"
+                                                        id="cr">
+                                                    <label
+                                                        class="custom-control-label small w-100 text-uppercase card-link-secondary px-2 py-1"
+                                                        for="cod">clash Royale</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox ml-2 pb-2">
+                                                    <input type="checkbox" class="custom-control-input filled-in"
+                                                        id="ff">
+                                                    <label
+                                                        class="custom-control-label small w-100 text-uppercase card-link-secondary px-2 py-1"
+                                                        for="cod">free fire</label>
+                                                </div>
+                                            </section>
+
+                                            <button type="button"
+                                                class="btn btn-outline-info waves-effect btn-sm w-100 ml-4"
+                                                onclick="gatherFilterElements()">apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center" id="tournamentLoader">
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-evenly flex-wrap col-12 p-0" id="tournamentCards">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="py-4">
+                            <div class="d-flex justify-content-between flex-wrap col-12" id="myTournamentCards">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Footer section  -->
+
+    <section class="footer mt-5" id="footer">
+        <div class="container">
+            <div class="social-circle-btn p-2 m-2 d-flex justify-content-center">
+                <div class="btnn instagram">
+                    <i class="fab fa-instagram fa-xs"></i>
+                </div>
+                <div class="btnn facebook">
+                    <i class="fab fa-facebook fa-xs"></i>
+                </div>
+                <div class="btnn twitter">
+                    <i class="fab fa-twitter fa-xs"></i>
+                </div>
+                <div class="btnn whatsapp">
+                    <i class="fab fa-whatsapp fa-xs"></i>
+                </div>
+                <div class="btnn youtube fa-xs">
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+
+        </div>
+        <p class="bg-primary mb-0 py-1 w-100 text-center"> Made with <i class="fas fa-heart"></i></p>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+    </script>
+    <script src="js/serverCall.js" type="text/javascript"></script>
+    <script src="./js/ProductLoader.js"></script>
+    <script src="./js/script.js"></script>
+
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+productListener()
+</script>
+
+</body>
+
+</html>
