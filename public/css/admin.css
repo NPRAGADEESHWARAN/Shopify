@@ -1,5 +1,5 @@
 body {
-    background-color: #f5e0e5 !important;
+    background-color: #4c4c5f !important;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -80,5 +80,22 @@ body {
 }
 
 .contact-form .submit-button-wrapper input:hover {
-    background-color: #d30069;
+    background-color: #0c8355;
+}
+
+h1 {
+    text-align:center;
+}
+
+
+a {
+    float: left;
+    display: block;
+    /* margin-left: 20px; */
+    border-bottom: 0;
+    border-left: 1px solid transparent;
+    /* padding-left: 15px; */
+    font-size: 24px;
+    font-weight: 500;
+
 }

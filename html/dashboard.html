@@ -31,12 +31,6 @@
                         <a class="nav-link middle" href="/dashboard">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link middle" href="/videos">Videos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link middle" href="/profile">Profile</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link middle" href="#footer">Contact</a>
                     </li>
                     <li class="nav-item">
@@ -78,27 +72,14 @@
 
                     <div class="row p-2 w-100">
 
-                        <section class="mb-3 pl-3 col-6 col-md-12">
-                            <p>Price</p>
-                            <div class="custom-control custom-checkbox ml-2 pb-2">
-                               From <input type="text"  id="fromPrice" style="width: 100px;">
-                            </div>
-                            <div class="custom-control custom-checkbox ml-2 pb-2">
-                                To  <input type="text"  id="toPrice" style="width: 100px;">
-                            </div>
-                        </section>
-
                         <section class="mb-3 pl-3 col-6 col-md-12" id="brandList">
                             <p>Brand</p>
-                            <div class="custom-control custom-checkbox ml-2 pb-2">
-                                <input type="checkbox" class="custom-control-input filled-in" id="today">
-                                <label class="custom-control-label small w-100 card-link-secondary px-2 py-1"
-                                       for="today">sample brand</label>
+                            <div class="custom-control custom-checkbox ml-2 pb-2" id="brandFilter">
                             </div>
                         </section>
 
                         <button type="button" class="btn btn-outline-info waves-effect btn-sm w-100 ml-4"
-                            onclick="gatherFilterElements()">apply</button>
+                            onclick="applyFilter()">apply</button>
                     </div>
                 </div>
             </div>
@@ -203,13 +184,17 @@
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="py-4">
-                            <div class="d-flex justify-content-between flex-wrap col-12" id="myTournamentCards">
+                            <div class="d-flex justify-content-evenly flex-wrap col-12" id="myTournamentCards">
 
                             </div>
                         </div>
                     </div>
                 </div>
 
+            </div>
+
+            <div class="col-md-3 pr-md-3 px-0 filter-pc">
+                <button id="buy" class="font-weight-bold w-100 border-bottom px-2 py-1" onclick="buy()">BUY</button>
             </div>
         </div>
 
