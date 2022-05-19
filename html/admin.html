@@ -8,14 +8,20 @@
 
 </head>
 <body>
-
+<h1>Welcome Back Admin!</h1>
 <div>
 
-    <a class="nav-link middle" onclick="redirectHome()">home</a>
-<!--    <a class="nav-link middle" onclick="logout()">logout</a>-->
+    <div>
+ <a class="nav-link middle" onclick="showAddPanel()">ADD</a>
+   <a class="nav-link middle" onclick="showUpdatePanel()">UPDATE</a>
+   <a class="nav-link middle" onclick="logout()">LOGOUT</a>
+    </div>
+  
+   <!-- <a class="nav-link middle" onclick="logout()">adminUpdate</a> -->
+
 
     <div class="contact-form-wrapper d-flex justify-content-center">
-        <form class="contact-form">
+        <form class="contact-form" style="display:none;" id="addProdForm">
             <h5 class="title">Brand</h5>
             <div>
                 <input type="text" class="form-control rounded border-white mb-3 form-input" id="brandName" placeholder="Brand Name" required>
@@ -39,9 +45,49 @@
                 <textarea  class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30" id="productDescription" placeholder="Description" required></textarea>
             </div>
             <div class="submit-button-wrapper">
-                <input type="button" value="Send" onclick="addProductInJS()">
+                <input type="button" value="Add" onclick="addProductInJS()">
             </div>
         </form>
+
+
+
+
+
+
+        <form class="contact-form" style="display:none;" id="updateProdForm">
+            <h5 class="title">Brand</h5>
+            <div>
+                <select id="brandLister">
+                    <option value="" disabled selected>Select</option>
+                </select>
+                <input type="text" class="form-control rounded border-white mb-3 form-input" id="brandName1" placeholder="Brand Name" required>
+            </div>
+            <h5 class="title">Product</h5>
+            <div>
+                <select id="productLister">
+                    <option id ="defaultProduct" value="" disabled selected>Select</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" class="form-control rounded border-white mb-3 form-input" id="productName1" placeholder="Product Name" required>
+            </div>
+            <div>
+                <input type="number" class="form-control rounded border-white mb-3 form-input" id="productPrice1" placeholder="Product Price" required>
+            </div>
+            <div>
+                <input type="number" class="form-control rounded border-white mb-3 form-input" id="inStock1" placeholder="Product In Stock" required>
+            </div>
+
+            <div>
+                <input type="text" class="form-control rounded border-white mb-3 form-input" id="imageURL1" placeholder="Copy image url for the product" required>
+            </div>
+
+            <div>
+                <textarea  class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30" id="productDescription1" placeholder="Description" required></textarea>
+            </div>
+            <div class="submit-button-wrapper">
+                <input type="button" value="Update" onclick="updateProductInJS()">
+            </div>
     </div>
 
 

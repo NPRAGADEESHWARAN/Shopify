@@ -1,12 +1,10 @@
 document.getElementById("signuplog").addEventListener("click", function signupWithEmail(event) {
     event.preventDefault()
-    alert("hi")
     let uname = document.getElementById("sign-up-username").value;
     let email = document.getElementById("sign-up-email").value;
     let password = window.btoa(document.getElementById("sign-up-pass").value);
 
-    if (true) {
-        alert('hi')
+    if (email && password) {
         let data = {}
         data.name = uname;
         data.email = email;
@@ -14,14 +12,31 @@ document.getElementById("signuplog").addEventListener("click", function signupWi
 
         createUserAPI(data).then(function (res) {
             if (res == "SUCCESS")
+            {
                 iziToast.error({
                     message: "Signing in",
                     position: "topRight"
                 })
-            console.log("logged in")
-            window.location.href = "/dashboard"
+            console.log("signup successuful")
+
+            setCookie(email)
+            
+            if (email = "admin@shopify.com") {
+                window.location.href = "/admin"
+            } else {
+                window.location.href = "/dashboard"
+
+            }
+            }
+            else
+            {
+                alert('incorrect username and password')
+            }
+                
         })
     } else {
+        alert('email and password should not be empty')
+
         iziToast.error({
             message: "Enter correct email",
             position: "topRight"
@@ -31,37 +46,30 @@ document.getElementById("signuplog").addEventListener("click", function signupWi
 
 document.getElementById("signinlog").addEventListener("click", function loginWithEmail(event) {
     event.preventDefault()
-    alert("hi")
     let email = document.getElementById("sign-in-email").value;
     let password = window.btoa(document.getElementById("sign-in-pass").value);
 
-    if (true) {
-        alert('hi')
+    if (email && password) {
         let data = {}
         data.email = email;
         data.password = password;
 
-        getUserAPI(data).then(function (res) {
-            console.log(res)
-            if (res == "SUCCESS")
-                iziToast.error({
-                    message: "Signing in",
-                    position: "topRight"
-                })
-            console.log("logged in")
-
-            if (email = "admin@shopify.com") {
-                window.location.href = "/admin"
-            } else {
-                window.location.href = "/dashboard"
-
-            }
-        })
-    } else {
-        iziToast.error({
-            message: "Enter correct email",
-            position: "topRight"
-        })
+        getUserAPI(data)
+    }
+    else{
+        alert('email and password should not be empty')
     }
 });
 
+function postLogin(email)
+{
+    console.log("logged in")
+    setCookie(email)
+
+    if (email == "admin@shopify.com") {
+        window.location.href = "/admin"
+    } else {
+        window.location.href = "/dashboard"
+
+    }
+}

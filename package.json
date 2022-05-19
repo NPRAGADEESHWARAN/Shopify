@@ -1,5 +1,5 @@
 {
-  "name": "shopify1",
+  "name": "shopify",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "crypto": "^1.0.1",
     "express": "^4.17.3",
     "izitoast": "^1.4.0",
     "path": "^0.12.7",
